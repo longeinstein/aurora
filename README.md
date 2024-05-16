@@ -1,11 +1,11 @@
 # AURORA
 
+已闭源发布，只用开源的可以绕行
+
 [README_EN](https://github.com/aurora-develop/aurora/blob/main/README_EN.md)
 
 （带UI）免费的GPT3.5，支持使用3.5的access 调用
 
-# 交流群
-https://t.me/aurora_develop
 
 # Web端 
 
@@ -15,6 +15,24 @@ https://t.me/aurora_develop
 
 
 ### 注：仅ip属地支持免登录使用ChatGpt可以使用(也可以自定义Baseurl来绕过限制)
+
+
+### Docker部署
+## Docker部署
+您需要安装Docker和Docker Compose。
+
+```bash
+docker run -d \
+  --name aurora \
+  -p 8080:8080 \
+  ghcr.io/aurora-develop/aurora:latest
+```
+## 更新容器
+
+```bash
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower -cR aurora --debug
+```
+## 现闭源发布
 
 ## Deploy
 
@@ -43,27 +61,6 @@ https://t.me/aurora_develop
 进入修改镜像名称aurora+任何字母数字
 
 [![Deploy on Zeabur](https://zeabur.com/button.svg)](https://zeabur.com/templates/JF3EFW)
-
-### 编译部署
-
-```bash
-git clone https://github.com/aurora-develop/aurora
-cd aurora
-go build -o aurora
-chmod +x ./aurora
-./aurora
-```
-
-### Docker部署
-## Docker部署
-您需要安装Docker和Docker Compose。
-
-```bash
-docker run -d \
-  --name aurora \
-  -p 8080:8080 \
-  ghcr.io/aurora-develop/aurora:latest
-```
 
 ## Docker Compose部署
 创建一个新的目录，例如aurora-app，并进入该目录：
